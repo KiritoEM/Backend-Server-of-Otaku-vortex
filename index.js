@@ -47,4 +47,4 @@ server.listen(process.env.PORT, () => {
   console.log(`Server started on PORT: ${process.env.PORT}`);
 });
 
-moduk.exports = app;
+module.exports = app;
