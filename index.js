@@ -23,6 +23,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
+app.get('/home', (req, res) => {
+  res.status(200).json('Welcome, your app is working well');
+})
+
+
 // App routes
 app.use("/email", require("./routes/email.routes"));
 app.use("/auth", require("./routes/auth.routes"));
@@ -30,16 +35,16 @@ app.use("/blog", require("./routes/blog.routes"));
 app.use("/user", require("./routes/user.routes"));
 app.use("/comments", require("./routes/comments.routes"));
 
-io.on('connection', (socket) => {
-
-  socket.on('comment', (comment) => {
-    io.emit('comment', comment);
+io.on("connection", (socket) => {
+  socket.on("comment", (comment) => {
+    io.emit("comment", comment);
   });
 
-  socket.on('disconnect', () => {
-  });
+  socket.on("disconnect", () => {});
 });
 // Start server
 server.listen(process.env.PORT, () => {
   console.log(`Server started on PORT: ${process.env.PORT}`);
 });
+
+moduk.exports = app;
