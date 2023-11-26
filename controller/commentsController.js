@@ -20,7 +20,7 @@ const postCommentsController = async (req, res) => {
     const response = await postComments(text, userID, blogID);
 
     if (response) {
-      const socket = socketIoClient("http://localhost:8000");
+      const socket = socketIoClient(`${process.env.URL_SERVER}`);
       socket.emit("comment", response);
       res
         .status(200)
