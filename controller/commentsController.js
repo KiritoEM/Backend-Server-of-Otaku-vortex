@@ -20,7 +20,7 @@ const postCommentsController = async (req, res) => {
     const response = await postComments(text, userID, blogID);
 
     if (response) {
-      const socket = socketIoClient(`${process.env.URL_SERVER}`);
+      const socket = socketIoClient("https://backend-server-of-otaku-vortex.vercel.app");
       socket.emit("comment", response);
       res
         .status(200)
