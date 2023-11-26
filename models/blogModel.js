@@ -40,7 +40,7 @@ const blogSchema = new mongoose.Schema({
   },
   typeAffichage:{
      type: Array,
-     require: true,
+     default:[]
   }
   ,
   Status:{
