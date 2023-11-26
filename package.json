@@ -4,7 +4,7 @@
   "description": "Otaku vortex serverside",
   "main": "app.js",
   "scripts": {
-    "server": "nodemon app.js"
+    "server": "nodemon index.js"
   },
   "author": "KiritoEm",
   "license": "ISC",
@@ -24,6 +24,8 @@
     "nodemailer": "^6.9.7",
     "nodemon": "^3.0.1",
     "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
+    "speakeasy": "^2.0.0",
     "vercel": "^32.5.6"
   }
 }
